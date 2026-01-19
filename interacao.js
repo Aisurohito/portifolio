@@ -236,31 +236,3 @@ document.addEventListener("DOMContentLoaded", () => {
   wireMobileMenu();
   wireReveal();
 });
-// Remove foco visual após clique (mantém Tab funcionando)
-document.addEventListener("pointerup", (e) => {
-  const btn = e.target.closest("a.btn, button.btn");
-  if (btn) btn.blur();
-});
-
-// Tira o foco do botão após clicar (some o "grudado")
-document.addEventListener("click", (e) => {
-  const el = e.target.closest(".btn-no-sticky");
-  if (el) el.blur();
-});
-
-// Mostra foco somente quando o usuário navega por teclado (Tab)
-(() => {
-  const root = document.documentElement;
-
-  function enableKeyboardMode(e) {
-    if (e.key === "Tab") root.classList.add("kbd");
-  }
-
-  function disableKeyboardMode() {
-    root.classList.remove("kbd");
-  }
-
-  window.addEventListener("keydown", enableKeyboardMode, true);
-  window.addEventListener("pointerdown", disableKeyboardMode, true);
-})();
-
