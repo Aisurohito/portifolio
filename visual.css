@@ -533,3 +533,28 @@ input:focus, textarea:focus{
 .btn:active{
   box-shadow: none;
 }
+
+/* ---- FIX: foco azul preso em <a class="btn"> ---- */
+a.btn, button.btn{
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.btn:focus{
+  outline: none;
+}
+
+/* Se o foco NÃO veio do teclado, remove o destaque */
+.btn:focus:not(:focus-visible){
+  box-shadow: none !important;
+  border-color: var(--border) !important;
+}
+
+/* Se veio do teclado (Tab), mantém acessível (mais discreto) */
+.btn:focus-visible{
+  box-shadow: 0 0 0 4px rgba(102,192,244,.18) !important;
+  border-color: rgba(102,192,244,.45) !important;
+}
+
+/* Evita estilos diferentes por link visitado */
+a.btn:visited{ color: inherit; }
