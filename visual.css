@@ -558,3 +558,18 @@ a.btn, button.btn{
 
 /* Evita estilos diferentes por link visitado */
 a.btn:visited{ color: inherit; }
+
+/* --- FIX definitivo: não deixar foco/ativo "grudado" nesse botão --- */
+.btn-no-sticky:focus,
+.btn-no-sticky:focus-visible,
+.btn-no-sticky:active{
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  filter: none !important;
+}
+
+.btn-no-sticky{
+  -webkit-tap-highlight-color: transparent;
+}
+
