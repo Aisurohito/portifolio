@@ -236,3 +236,9 @@ document.addEventListener("DOMContentLoaded", () => {
   wireMobileMenu();
   wireReveal();
 });
+// Remove foco visual após clique (mantém Tab funcionando)
+document.addEventListener("pointerup", (e) => {
+  const btn = e.target.closest("a.btn, button.btn");
+  if (btn) btn.blur();
+});
+
