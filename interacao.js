@@ -248,3 +248,19 @@ document.addEventListener("click", (e) => {
   if (el) el.blur();
 });
 
+// Mostra foco somente quando o usuário navega por teclado (Tab)
+(() => {
+  const root = document.documentElement;
+
+  function enableKeyboardMode(e) {
+    if (e.key === "Tab") root.classList.add("kbd");
+  }
+
+  function disableKeyboardMode() {
+    root.classList.remove("kbd");
+  }
+
+  window.addEventListener("keydown", enableKeyboardMode, true);
+  window.addEventListener("pointerdown", disableKeyboardMode, true);
+})();
+
