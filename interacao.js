@@ -242,3 +242,9 @@ document.addEventListener("pointerup", (e) => {
   if (btn) btn.blur();
 });
 
+// Tira o foco do botão após clicar (some o "grudado")
+document.addEventListener("click", (e) => {
+  const el = e.target.closest(".btn-no-sticky");
+  if (el) el.blur();
+});
+
