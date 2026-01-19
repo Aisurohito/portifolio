@@ -573,3 +573,21 @@ a.btn:visited{ color: inherit; }
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Foco: por padrão, NÃO mostra no clique (mouse/touch) */
+.btn:focus,
+.btn:focus-visible{
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Quando o usuário está no modo teclado (Tab), aí sim mostramos foco */
+.kbd .btn:focus-visible{
+  box-shadow: 0 0 0 4px rgba(102,192,244,.18) !important;
+  border-color: rgba(102,192,244,.45) !important;
+}
+
+/* Remove highlight do toque no mobile */
+.btn{
+  -webkit-tap-highlight-color: transparent;
+}
+
