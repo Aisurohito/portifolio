@@ -1,0 +1,324 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consciência Studio — Web • E-commerce • Vídeo</title>
+  <meta name="description" content="Sites, lojas e vídeos com estética premium e foco em conversão." />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="stylesheet" href="visual.css" />
+  <script src="interacao.js" defer></script>
+</head>
+
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Ir para o início">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">Consciência Studio</span>
+      </a>
+
+      <button class="nav-burger btn btn-ghost" id="menuBtn" type="button" aria-label="Abrir menu">
+        <span class="burger" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#pacotes">Pacotes</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="#portfolio">Ver Portfólio</a>
+        <a class="btn btn-primary" id="btn-whats-top" href="#">Pedir Orçamento</a>
+      </div>
+    </div>
+
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Menu móvel">
+      <a href="#servicos">Serviços</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main id="top" class="hero">
+    <div class="container hero-grid">
+      <section class="hero-left">
+        <div class="pill-row">
+          <span class="pill">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"></path>
+            </svg>
+            Página rápida
+          </span>
+
+          <span class="pill">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 6h15l-2 8H8L6 6z"></path>
+              <path d="M6 6L5 3H2"></path>
+              <path d="M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
+              <path d="M18 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
+            </svg>
+            Loja pronta
+          </span>
+
+          <span class="pill">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="7" width="15" height="10" rx="2"></rect>
+              <path d="M18 10l3-2v8l-3-2"></path>
+            </svg>
+            Reels/Shorts
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          Design com <span class="grad">presença</span> — feito para vender e passar confiança.
+        </h1>
+
+        <p class="hero-sub">
+          Criação de <strong>landing pages</strong>, <strong>sites</strong> e <strong>lojas e-commerce</strong> + edição de vídeos curtos
+          com ritmo, legendas e estética limpa.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" id="btn-whats-hero" href="#">Quero orçamento</a>
+          <a class="btn btn-outline" href="#portfolio">Ver trabalhos</a>
+          <a class="btn btn-outline" href="#pacotes">Ver pacotes</a>
+          <a class="btn btn-ghost" id="btn-whats-portfolio" href="#">Falar no WhatsApp</a>
+        </div>
+
+        <div class="hero-proof">
+          <div class="proof-card reveal">
+            <div class="proof-ic" aria-hidden="true">
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <path d="M5 13l4 6 3-7 7-3-6-4-8 3z"></path>
+                <path d="M12 12l-2 2"></path>
+              </svg>
+            </div>
+            <div>
+              <b>Performance</b>
+              <span>leve no celular</span>
+            </div>
+          </div>
+
+          <div class="proof-card reveal">
+            <div class="proof-ic" aria-hidden="true">
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9"></circle>
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 12l6-3"></path>
+              </svg>
+            </div>
+            <div>
+              <b>Conversão</b>
+              <span>CTA + prova social</span>
+            </div>
+          </div>
+
+          <div class="proof-card reveal">
+            <div class="proof-ic" aria-hidden="true">
+              <svg class="icon icon-lg" viewBox="0 0 24 24">
+                <path d="M4 7h16"></path>
+                <path d="M4 12h16"></path>
+                <path d="M4 17h16"></path>
+                <path d="M7 7v10"></path>
+                <path d="M17 7v10"></path>
+              </svg>
+            </div>
+            <div>
+              <b>Organização</b>
+              <span>escopo e revisões</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="hero-right" aria-hidden="true">
+        <div class="spotlight"></div>
+
+        <div class="hero-panel">
+          <div class="panel-top">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+          <div class="panel-body">
+            <div class="panel-line w70"></div>
+            <div class="panel-line w55"></div>
+            <div class="panel-line w85"></div>
+
+            <div class="panel-grid">
+              <div class="panel-chip">UI</div>
+              <div class="panel-chip">SEO</div>
+              <div class="panel-chip">Speed</div>
+              <div class="panel-chip">Reels</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <section id="servicos" class="section reveal">
+    <div class="container">
+      <div class="section-head">
+        <h2>Serviços</h2>
+        <p>Foco em apresentação, confiança e conversão — com entrega organizada.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-tag">WEB</div>
+          <h3>Landing Page / Site</h3>
+          <ul>
+            <li>Responsivo (mobile/desktop)</li>
+            <li>Estrutura de conversão</li>
+            <li>Visual limpo e premium</li>
+          </ul>
+          <a class="btn btn-outline btn-small" href="#contato">Pedir orçamento</a>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">E-COMMERCE</div>
+          <h3>Loja Virtual</h3>
+          <ul>
+            <li>Home + vitrine + categorias</li>
+            <li>Banners e organização</li>
+            <li>Configuração básica</li>
+          </ul>
+          <a class="btn btn-outline btn-small" href="#contato">Quero minha loja</a>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">VÍDEO</div>
+          <h3>Reels / Shorts</h3>
+          <ul>
+            <li>Cortes com ritmo</li>
+            <li>Legendas e destaques</li>
+            <li>Formato por rede</li>
+          </ul>
+          <a class="btn btn-outline btn-small" href="#contato">Quero vídeos</a>
+        </article>
+      </div>
+
+      <p class="muted small">*Pagamentos e frete variam por plataforma e contas do cliente.</p>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section reveal">
+    <div class="container">
+      <div class="section-head">
+        <h2>Portfólio</h2>
+        <p>Troque pelos seus links reais. Você pode usar projetos demonstrativos também.</p>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="Filtrar projetos">
+        <button class="chip is-active" id="filterAll" type="button" role="tab">Todos</button>
+        <button class="chip" id="filterWeb" type="button" role="tab">Web</button>
+        <button class="chip" id="filterShop" type="button" role="tab">E-commerce</button>
+        <button class="chip" id="filterVideo" type="button" role="tab">Vídeo</button>
+      </div>
+
+      <div class="projects" id="projectsGrid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="pacotes" class="section reveal">
+    <div class="container">
+      <div class="section-head">
+        <h2>Pacotes</h2>
+        <p>Um guia simples para o cliente decidir com rapidez.</p>
+      </div>
+
+      <div class="pricing">
+        <div class="price">
+          <div class="price-tag">Starter</div>
+          <h3>Landing</h3>
+          <p class="muted">1 página completa</p>
+          <ul>
+            <li>CTA + FAQ + Contato</li>
+            <li>Responsivo</li>
+            <li>1–2 revisões</li>
+          </ul>
+          <a class="btn btn-outline btn-small" href="#contato">Pedir valor</a>
+        </div>
+
+        <div class="price featured">
+          <div class="price-tag">Mais pedido</div>
+          <h3>E-commerce</h3>
+          <p class="muted">Loja pronta pra vender</p>
+          <ul>
+            <li>Home + vitrine + categorias</li>
+            <li>Produtos + banners</li>
+            <li>Suporte pós-entrega</li>
+          </ul>
+          <a class="btn btn-primary btn-small" href="#contato">Quero minha loja</a>
+        </div>
+
+        <div class="price">
+          <div class="price-tag">Vídeo</div>
+          <h3>Reels</h3>
+          <p class="muted">Conteúdo curto</p>
+          <ul>
+            <li>Cortes + ritmo</li>
+            <li>Legendas</li>
+            <li>Entrega rápida</li>
+          </ul>
+          <a class="btn btn-outline btn-small" href="#contato">Quero vídeos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="section reveal">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contato</h2>
+        <p>Envie o objetivo e referências. Eu retorno com prazo e valor.</p>
+      </div>
+
+      <div class="contact">
+        <div class="contact-left">
+          <h3>Vamos começar</h3>
+          <p class="muted">
+            Ideal: objetivo, prazo, referências e material (logo/fotos/produtos).
+          </p>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" id="btn-whats-contact" href="#">WhatsApp</a>
+            <a class="btn btn-outline" id="btn-email" href="#">E-mail</a>
+          </div>
+
+          <div class="social">
+            <a class="btn btn-ghost btn-small" id="linkInstagram" href="#" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn btn-ghost btn-small" id="linkLinkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+
+          <p class="muted small" id="contactNote"></p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label class="sr-only" for="name">Seu nome</label>
+          <input id="name" name="name" placeholder="Seu nome" autocomplete="name" required />
+
+          <label class="sr-only" for="service">Serviço</label>
+          <input id="service" name="service" placeholder="Serviço (site, loja, vídeo...)" required />
+
+          <label class="sr-only" for="message">Mensagem</label>
+          <textarea id="message" name="message" placeholder="Descreva seu projeto..." rows="5" required></textarea>
+
+          <button class="btn btn-primary" type="submit">Enviar</button>
+          <span class="muted small">O envio abre uma conversa no WhatsApp com a mensagem pronta.</span>
+        </form>
+      </div>
+
+      <footer class="footer">
+        <span class="muted small">© Consciência Studio — Web • E-commerce • Vídeo</span>
+      </footer>
+    </div>
+  </section>
+</body>
+</html>
