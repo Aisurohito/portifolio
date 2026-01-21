@@ -16,7 +16,7 @@ const PROJECTS = [
     desc: "Modelos feitos para exposição",
     tech: ["HTML", "CSS", "JS"],
     link: "./sites/index.html", // interno -> mesma guia
-    // thumb opcional:
+    thumb: "assets/thumb/imgprog.png"
     // thumb: "assets/thumb/sites.jpg",
   },
   {
