@@ -9,14 +9,15 @@ const CONFIG = {
   linkedinUrl: "https://www.linkedin.com/in/kau%C3%A3-miranda-7bba29235/",
 };
 
-
 const PROJECTS = [
   {
     title: "Sites Criados",
     type: "Sites",
     desc: "Modelos feitos para exposição",
     tech: ["HTML", "CSS", "JS"],
-    link: "./sites/index.html",
+    link: "./sites/index.html", // interno -> mesma guia
+    // thumb opcional:
+    // thumb: "assets/thumb/sites.jpg",
   },
   {
     title: "Loja Demo — Moda",
@@ -24,18 +25,17 @@ const PROJECTS = [
     desc: "Vitrine, categorias e banners (estudo de caso).",
     tech: ["Wix/Shopify", "Layout"],
     link: "#",
+    // thumb opcional:
+    // thumb: "assets/thumb/loja.jpg",
   },
   {
-  title: "Reels — Produto",
-  type: "video",
-  desc: "Edição curta com cortes, ritmo e legenda.",
-  tech: ["CapCut/Premiere", "Legendas"],
-  link: "assets/videos/sorteio.mp4",      // botão "Ver" abre o vídeo
-  thumb: "assets/thumb/Edição.jpg"     // só a imagem aparece no card
-},
-
-
-
+    title: "Reels — Produto",
+    type: "video",
+    desc: "Edição curta com cortes, ritmo e legenda.",
+    tech: ["CapCut/Premiere", "Legendas"],
+    link: "assets/video/sorteio.mp4",      // abre o vídeo
+    thumb: "assets/thumb/Edição.jpg",      // só a imagem aparece no card
+  },
 ];
 
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -44,7 +44,6 @@ function whatsappLink(message) {
   const num = String(CONFIG.whatsappNumber).replace(/\D/g, "");
   return `https://wa.me/${num}?text=${encodeURIComponent(message)}`;
 }
-
 
 function escapeHtml(str) {
   return String(str)
@@ -77,7 +76,9 @@ function renderProjects(filterType = "all") {
 
   grid.innerHTML = "";
 
-  const items = PROJECTS.filter((p) => (filterType === "all" ? true : p.type === filterType));
+  const items = PROJECTS.filter((p) =>
+    filterType === "all" ? true : p.type === filterType
+  );
 
   if (!items.length) {
     grid.innerHTML = `
@@ -91,33 +92,38 @@ function renderProjects(filterType = "all") {
   }
 
   items.forEach((p) => {
-  const tech = p.tech.map((t) => `<span class="pill">${escapeHtml(t)}</span>`).join("");
-  const link = p.link && p.link !== "#" ? p.link : "#";
+    const tech = (p.tech || []).map((t) => `<span class="pill">${escapeHtml(t)}</span>`).join("");
 
-  const thumb = p.thumb ? escapeHtml(p.thumb) : "";
-  const thumbStyle = thumb ? `style="background-image:url('${thumb}')"` : "";
+    const link = p.link && p.link !== "#" ? p.link : "#";
 
-  const card = document.createElement("article");
-  card.className = "project";
+    // thumb (imagem do card)
+    const thumb = p.thumb ? escapeHtml(p.thumb) : "";
+    const thumbStyle = thumb ? `style="background-image:url('${thumb}')"` : "";
 
-  card.innerHTML = `
-    <div class="thumb thumb-img" ${thumbStyle}>
-      <span class="label">${typeLabel(p.type)}</span>
-    </div>
+    // REGRA: externo abre nova guia, interno abre mesma guia
+    const isExternal = /^https?:\/\//i.test(link);
+    const targetAttr = isExternal ? ` target="_blank" rel="noopener"` : "";
 
-    <h4>${escapeHtml(p.title)}</h4>
-    <p>${escapeHtml(p.desc)}</p>
+    const card = document.createElement("article");
+    card.className = "project";
 
-    <div class="row">${tech}</div>
+    card.innerHTML = `
+      <div class="thumb thumb-img" ${thumbStyle}>
+        <span class="label">${typeLabel(p.type)}</span>
+      </div>
 
-    <div class="row" style="margin-top:10px;">
-      <a class="btn btn-outline btn-small" href="${escapeHtml(link)}" target="_blank" rel="noopener">Ver</a>
-    </div>
-  `;
+      <h4>${escapeHtml(p.title)}</h4>
+      <p>${escapeHtml(p.desc)}</p>
 
-  grid.appendChild(card);
-});
+      <div class="row">${tech}</div>
 
+      <div class="row" style="margin-top:10px;">
+        <a class="btn btn-outline btn-small" href="${escapeHtml(link)}"${targetAttr}>Ver</a>
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
 }
 
 function wireFilters() {
@@ -176,9 +182,7 @@ function wireEmailButton() {
   }
 
   const subject = encodeURIComponent("Orçamento — Web / Loja / Vídeo");
-  const body = encodeURIComponent(
-    `Olá!\n\nQuero um orçamento.\n\nServiço:\nObjetivo:\nPrazo:\nReferências:\n`
-  );
+  const body = encodeURIComponent(`Olá!\n\nQuero um orçamento.\n\nServiço:\nObjetivo:\nPrazo:\nReferências:\n`);
 
   emailBtn.href = `mailto:${CONFIG.email}?subject=${subject}&body=${body}`;
 }
