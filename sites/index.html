@@ -1,0 +1,98 @@
+<!-- sites/index.html -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sites — Consciência Studio</title>
+  <meta name="description" content="Galeria de sites criados (demos, landing pages e lojas)." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Design geral -->
+  <link rel="stylesheet" href="../css/visual.css" />
+  <link rel="stylesheet" href="../css/sites.css" />
+
+  <!-- Dados + lógica da página -->
+  <script src="../js/data.js" defer></script>
+  <script src="../js/sites.js" defer></script>
+</head>
+
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../index.html" aria-label="Voltar ao portfólio">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">Consciência Studio</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação">
+        <a href="../index.html#portfolio">Portfólio</a>
+        <a href="#galeria">Sites</a>
+        <a href="../index.html#contato">Contato</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="../index.html#portfolio">Voltar</a>
+        <a class="btn btn-primary" id="btn-whats-sites" href="#">Pedir Orçamento</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section" id="galeria">
+    <div class="container">
+      <div class="section-head" style="margin-bottom:14px;">
+        <h1 style="margin:0; letter-spacing:-.2px;">Galeria de Sites</h1>
+        <p class="muted" style="margin:0; max-width:70ch; line-height:1.5;">
+          Aqui você coloca seus projetos. Cada card pode ter link do site, link do repositório e status.
+        </p>
+      </div>
+
+      <!-- ferramentas (busca + filtros) -->
+      <div class="filters" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+        <label class="sr-only" for="q">Buscar</label>
+        <input
+          id="q"
+          class="sites-search"
+          type="search"
+          placeholder="Buscar (nome, tag, tech...)"
+          autocomplete="off"
+        />
+
+        <div class="sites-filters" role="tablist" aria-label="Filtrar">
+          <button class="chip is-active" data-filter="all" type="button" role="tab">Todos</button>
+          <button class="chip" data-filter="landing" type="button" role="tab">Landing</button>
+          <button class="chip" data-filter="ecom" type="button" role="tab">E-commerce</button>
+          <button class="chip" data-filter="webapp" type="button" role="tab">Web App</button>
+
+          <!-- novos -->
+          <button class="chip" data-filter="blog" type="button" role="tab">Blog</button>
+          <button class="chip" data-filter="portfolio" type="button" role="tab">Portfólios</button>
+
+          <button class="chip" data-filter="institucional" type="button" role="tab">Institucional</button>
+        </div>
+      </div>
+
+      <!-- grade -->
+      <section id="tiles" class="projects" aria-live="polite"></section>
+    </div>
+  </main>
+
+  <footer class="section">
+    <div class="container">
+      <div class="sites-footer">
+        <div>
+          <h2>Quer um site nesse estilo?</h2>
+          <p class="muted">Me chama no WhatsApp e eu retorno com prazo e valor.</p>
+        </div>
+        <a class="btn btn-primary" href="../index.html#contato">Ir para Contato</a>
+      </div>
+
+      <div class="footer">
+        <span class="muted small">© Consciência Studio</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
