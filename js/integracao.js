@@ -11,39 +11,29 @@ const CONFIG = {
 
 const PROJECTS = [
   {
-      id: "titanmetal",
-      title: "TitanMetal",
-      category: "institucional",
-      desc: "Institucional com foco em apresentação direta e valoes de trabalho",
-      tech: ["HTML"],
-      thumb: "./assets/thumb/titanmetal.png",
-      live: "https://aisurohito.github.io/Sites-metalurgica/",
-      repo: "#",
-      status: "Demonstracao"
+    title: "titanmetal",
+    type: "demonstracao",
+    desc: "Modelos feitos para exposição",
+    tech: ["HTML", "CSS", "JS"],
+    link: "https://aisurohito.github.io/Sites-metalurgica/",
+    thumb: "assets/thumb/titanmetal.png"
   },
-    {
-      id: "bellamoda",
-      title: "Bella Moda",
-      category: "institucional",
-      desc: "Institucional com apresentação de surgimento e conquistas",
-      tech: ["HTML"],
-      thumb: "./assets/thumb/bellamoda.png",
-      live: "https://aisurohito.github.io/Sites-loja-de-roupa/",
-      repo: "#",
-      status: "Demonstracao"
-    },
-
-    {
-      id: "techsolutions",
-      title: "TechSolutions",
-      category: "institucional",
-      desc: "Institucional com apresentação de surgimento, Propósito e serviços",
-      tech: ["HTML"],
-      thumb: "./assets/thumb/techsolutions.png",
-      live: "https://aisurohito.github.io/Site-Tech/",
-      repo: "#",
-      status: "Demonstracao"
-    },
+  {
+    title: "bellamoda",
+    type: "demonstracao",
+    desc: "Modelos feitos para exposição",
+    tech: ["HTML", "CSS", "JS"],
+    link: "https://aisurohito.github.io/Sites-loja-de-roupa/",
+    thumb: "assets/thumb/bellamoda.png"
+  },
+  {
+    title: "techsolutions",
+    type: "demonstracao",
+    desc: "Modelos feitos para exposição",
+    tech: ["HTML", "CSS", "JS"],
+    link: "https://aisurohito.github.io/Site-Tech/",
+    thumb: "assets/thumb/techsolutions.png"
+  },
 ];
 
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -66,7 +56,7 @@ function typeLabel(t) {
   if (t === "web") return "WEB";
   if (t === "shop") return "E-COMMERCE";
   if (t === "video") return "VÍDEO";
-  if (t === "Demonstracao") return "DEMONSTRAÇÃO";
+  if (t === "demonstracao") return "DEMONSTRAÇÃO";  
   return "PROJETO";
 }
 
