@@ -93,16 +93,16 @@ function renderProjects(filterType = "all") {
   items.forEach((p) => {
     const tech = (p.tech || []).map((t) => `<span class="pill">${escapeHtml(t)}</span>`).join("");
 
-    const link = p.link && p.link !== "#" ? p.link : "#";
+    const href = (p.link || "").trim();
+    const hasLink = href && href !== "#";
 
     // thumb (imagem do card)
     const thumb = p.thumb ? escapeHtml(p.thumb) : "";
     const thumbStyle = thumb ? `style="background-image:url('${thumb}')"` : "";
 
     // REGRA: externo abre nova guia, interno abre mesma guia
-    const isExternal = /^https?:\/\//i.test(link);
+    const isExternal = /^https?:\/\//i.test(href);
     const targetAttr = isExternal ? ` target="_blank" rel="noopener"` : "";
-
     const card = document.createElement("article");
     card.className = "project";
 
@@ -116,9 +116,14 @@ function renderProjects(filterType = "all") {
 
       <div class="row">${tech}</div>
 
-      <div class="row" style="margin-top:10px;">
-        <a class="btn btn-outline btn-small" href="${escapeHtml(link)}"${targetAttr}>Ver</a>
-      </div>
+<div class="row" style="margin-top:10px;">
+  ${
+    hasLink
+      ? `<a class="btn btn-outline btn-small" href="${escapeHtml(href)}"${targetAttr}>Ver</a>`
+      : `<span class="muted small">Sem link</span>`
+  }
+</div>
+
     `;
 
     grid.appendChild(card);
