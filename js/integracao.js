@@ -11,31 +11,39 @@ const CONFIG = {
 
 const PROJECTS = [
   {
-    title: "Sites Criados",
-    type: "Sites",
-    desc: "Modelos feitos para exposição",
-    tech: ["HTML", "CSS", "JS"],
-    link: "./sites/index.html", // interno -> mesma guia
-    thumb: "assets/thumb/imgprog.png"
-    // thumb: "assets/thumb/sites.jpg",
+      id: "titanmetal",
+      title: "TitanMetal",
+      category: "institucional",
+      desc: "Institucional com foco em apresentação direta e valoes de trabalho",
+      tech: ["HTML"],
+      thumb: "./assets/thumb/titanmetal.png",
+      live: "https://aisurohito.github.io/Sites-metalurgica/",
+      repo: "#",
+      status: "Demonstracao"
   },
-  {
-    title: "Loja Demo — Moda",
-    type: "shop",
-    desc: "Vitrine, categorias e banners (estudo de caso).",
-    tech: ["Wix/Shopify", "Layout"],
-    link: "#",
-    // thumb opcional:
-    // thumb: "assets/thumb/loja.jpg",
-  },
-  {
-    title: "Reels — Produto",
-    type: "video",
-    desc: "Edição curta com cortes, ritmo e legenda.",
-    tech: ["CapCut/Premiere", "Legendas"],
-    link: "assets/video/sorteio.mp4",      // abre o vídeo
-    thumb: "assets/thumb/Edição.jpg",      // só a imagem aparece no card
-  },
+    {
+      id: "bellamoda",
+      title: "Bella Moda",
+      category: "institucional",
+      desc: "Institucional com apresentação de surgimento e conquistas",
+      tech: ["HTML"],
+      thumb: "./assets/thumb/bellamoda.png",
+      live: "https://aisurohito.github.io/Sites-loja-de-roupa/",
+      repo: "#",
+      status: "Demonstracao"
+    },
+
+    {
+      id: "techsolutions",
+      title: "TechSolutions",
+      category: "institucional",
+      desc: "Institucional com apresentação de surgimento, Propósito e serviços",
+      tech: ["HTML"],
+      thumb: "./assets/thumb/techsolutions.png",
+      live: "https://aisurohito.github.io/Site-Tech/",
+      repo: "#",
+      status: "Demonstracao"
+    },
 ];
 
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -58,6 +66,7 @@ function typeLabel(t) {
   if (t === "web") return "WEB";
   if (t === "shop") return "E-COMMERCE";
   if (t === "video") return "VÍDEO";
+  if (t === "Demonstracao") return "DEMONSTRAÇÃO";
   return "PROJETO";
 }
 
@@ -127,6 +136,13 @@ function renderProjects(filterType = "all") {
 }
 
 function wireFilters() {
+  // Se os botões de filtro não existirem mais, só renderiza tudo e pronto.
+  const hasFilters = document.getElementById("filterAll");
+  if (!hasFilters) {
+    renderProjects("all");
+    return;
+  }
+
   const map = {
     filterAll: "all",
     filterWeb: "web",
@@ -146,6 +162,7 @@ function wireFilters() {
   setActiveFilter("filterAll");
   renderProjects("all");
 }
+
 
 function wireSocial() {
   const ig = $("#linkInstagram");
