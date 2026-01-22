@@ -16,7 +16,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "titanmetal",
       title: "TitanMetal",
-      category: "Institucional",
+      category: "institucional",
       desc: "Institucional com foco em apresentação direta e valoes de trabalho",
       tech: ["HTML"],
       thumb: "../assets/thumb/titanmetal.png",
@@ -28,7 +28,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "bellamoda",
       title: "Bella Moda",
-      category: "Institucional",
+      category: "institucional",
       desc: "Institucional com apresentação de surgimento e conquistas",
       tech: ["HTML"],
       thumb: "../assets/thumb/bellamoda.png",
@@ -40,7 +40,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "techsolutions",
       title: "TechSolutions",
-      category: "Institucional",
+      category: "institucional",
       desc: "Institucional com apresentação de surgimento, Propósito e serviços",
       tech: ["HTML"],
       thumb: "../assets/thumb/techsolutions.png",
@@ -52,7 +52,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "atlasfit",
       title: "AtlasFit",
-      category: "E-Commerce",
+      category: "ecom",
       desc: "E-Commerce com focom em apresentação direta de produtos, layout criativo e chamativo",
       tech: ["HTML"],
       thumb: "../assets/thumb/atlasfit.png",
